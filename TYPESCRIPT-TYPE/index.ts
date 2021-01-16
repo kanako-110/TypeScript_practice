@@ -44,3 +44,40 @@ banana = anything;
 
 let unionType: number | string = 10;
 let unionTypes: (number | string)[] = [21, "hello"]
+
+const apple = "apple"
+let clothSize: "small" | "medium" | "large" = "small";
+
+type ClothSize = "small" | "medium" | "large"
+const cloth : {
+  color: string,
+  size: ClothSize
+} = {
+  color: "white",
+  size: "medium"
+}
+
+//function funcName( , ): 戻り値の型{}
+function add(num1: number, num2: number): number{
+  return num1 + num2
+}
+
+// undefinedはreturn がないと使えない
+// voidは合ってもなくても使える　基本こっちを使う
+function sayHello(): undefined {
+  console.log("Hello")
+  return 
+}
+
+// 関数の型注釈　
+// いつ使うか：関数を保持する変数を作るときなど：
+// parameter のあと => 
+// ※定義はコロン
+const anotherAdd: (n1: number, n2: number) => number = function(num1, num2){
+  return num1 * num2
+};
+
+// arrow関数
+// 左に変数名に型注釈
+const doubleNumber: (num: number) => number = number => number * 2;
+
