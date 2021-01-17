@@ -78,6 +78,17 @@ const anotherAdd: (n1: number, n2: number) => number = function(num1, num2){
 };
 
 // arrow関数
-// 左に変数名に型注釈
+// arrow関数の関数制限
+const doubleNumber2 = (number : number): number => number * 3;
+// これだとせっかくarrow関数にしてきれいにreturn文を見えるようにしたのに意味ないじゃん
+// →変数名に型注釈する
 const doubleNumber: (num: number) => number = number => number * 2;
 
+// 第二引数にコールバック関数を指定。その数式を第二引数で書く。
+function doubleAndHandle(num: number, cb:(num: number)=> number): void {
+  const doubleNum = cb(num*3)
+  console.log(num * 2)
+}
+doubleAndHandle(20, doubleNum => {
+  return doubleNum
+})
