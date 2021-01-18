@@ -92,3 +92,21 @@ function doubleAndHandle(num: number, cb:(num: number)=> number): void {
 doubleAndHandle(20, doubleNum => {
   return doubleNum
 })
+
+let unknownInput : unknown; //unknown型
+let anyInput : any; //any型
+let text: string;
+unknownInput = "hello"
+unknownInput = 21
+unknownInput = true; //なんでも入れれる! が、中身がstring/num/booleanと複数入っていると、新しい変数に代入はできない。anyはできる
+text = anyInput
+// unknownInputを変数に代入したいときはif文にする
+if (typeof unknownInput === 'string'){ //unknownInputがstringのとき
+  text = unknownInput
+}
+
+function error(message: string): never{
+  throw new Error(message);
+}
+
+
